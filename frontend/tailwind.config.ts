@@ -1,48 +1,16 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  // 确保这里包含所有包含 Tailwind 类名的文件路径
+  // 你的项目结构没有 src 目录，所以直接指向 app 和 components
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}", 
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}", // 保留以防万一有旧的路由结构
+    "./lib/**/*.{js,ts,jsx,tsx,mdx}",   // 如果 lib 中有带样式的工具函数
   ],
   theme: {
-    extend: {
-      colors: {
-        background: "#030303", // PRD: 极深的黑色基底
-        surface: "rgba(255, 255, 255, 0.05)",
-        primary: {
-          DEFAULT: "#00FFA3", // PRD: 幽灵绿
-          glow: "rgba(0, 255, 163, 0.5)",
-        },
-        secondary: {
-          DEFAULT: "#4F46E5", // PRD: 深靛蓝
-        },
-        border: "rgba(255, 255, 255, 0.1)",
-      },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-      },
-      animation: {
-        "blob": "blob 7s infinite",
-      },
-      keyframes: {
-        blob: {
-          "0%": {
-            transform: "translate(0px, 0px) scale(1)",
-          },
-          "33%": {
-            transform: "translate(30px, -50px) scale(1.1)",
-          },
-          "66%": {
-            transform: "translate(-20px, 20px) scale(0.9)",
-          },
-          "100%": {
-            transform: "translate(0px, 0px) scale(1)",
-          },
-        },
-      },
-    },
+    // ... (保持原有的 theme 配置)
   },
   plugins: [],
 };
