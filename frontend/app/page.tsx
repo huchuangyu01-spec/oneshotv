@@ -1,4 +1,4 @@
-import { Settings, Play, Download, Sparkles } from "lucide-react";
+import { Play, Sparkles } from "lucide-react";
 
 export default function StudioPage() {
   return (
@@ -6,12 +6,12 @@ export default function StudioPage() {
       
       {/* Left Sidebar: Resources */}
       <aside className="w-64 border-r border-white/5 bg-[#030303]/50 p-4 flex flex-col gap-4">
-        <h2 className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Resources</h2>
+        <h2 className="text-xs font-semibold text-gray-500 uppercase tracking-wider">资源库</h2>
         <div className="space-y-2">
            {/* Mock Resources */}
            {[1, 2, 3].map((i) => (
              <div key={i} className="glass-panel h-20 rounded-lg flex items-center justify-center text-gray-600 hover:text-white hover:border-white/20 cursor-pointer transition-all">
-               Asset {i}
+               素材 {i}
              </div>
            ))}
         </div>
@@ -33,14 +33,14 @@ export default function StudioPage() {
           <div className="flex items-start gap-4 h-full">
              <textarea 
                className="flex-1 bg-white/5 border border-white/10 rounded-lg p-4 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-primary/50 resize-none h-full transition-colors"
-               placeholder="Describe your scene in detail..."
+               placeholder="详细描述你的画面..."
              />
              <div className="flex flex-col gap-2">
-               <button className="glass-button p-3 rounded-lg text-primary hover:text-white" title="Enhance Prompt">
+               <button className="glass-button p-3 rounded-lg text-primary hover:text-white" title="AI 润色">
                  <Sparkles className="w-5 h-5" />
                </button>
                <button className="bg-primary text-black font-bold py-3 px-6 rounded-lg shadow-[0_0_20px_rgba(0,255,163,0.3)] hover:shadow-[0_0_30px_rgba(0,255,163,0.5)] transition-all flex items-center gap-2">
-                 <span>Generate</span>
+                 <span>生成视频</span>
                </button>
              </div>
           </div>
@@ -52,37 +52,36 @@ export default function StudioPage() {
         
         {/* Camera Control Grid */}
         <div>
-          <h2 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Camera Control</h2>
+          <h2 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">运镜控制</h2>
           <div className="grid grid-cols-3 gap-2 aspect-square mb-4">
-            {['UL', 'U', 'UR', 'L', 'C', 'R', 'DL', 'D', 'DR'].map((pos) => (
+            {['左上', '上', '右上', '左', '中心', '右', '左下', '下', '右下'].map((pos) => (
               <button 
                 key={pos} 
                 className="glass-panel rounded-md flex items-center justify-center hover:bg-white/10 hover:border-primary/30 transition-all group relative overflow-hidden"
               >
                 <span className="text-xs text-gray-600 group-hover:text-primary">{pos}</span>
-                {/* On hover, this would show a video preview per PRD */}
               </button>
             ))}
           </div>
-          <p className="text-[10px] text-gray-500 text-center">Hover to preview movement</p>
+          <p className="text-[10px] text-gray-500 text-center">悬停以预览运镜效果</p>
         </div>
 
         {/* Parameters */}
         <div className="space-y-6">
           <div className="space-y-2">
             <div className="flex justify-between text-xs">
-              <span className="text-gray-400">Motion Intensity</span>
+              <span className="text-gray-400">运动强度</span>
               <span className="text-primary">5</span>
             </div>
-            <input type="range" className="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-primary" />
+            <input type="range" min="1" max="10" className="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-primary" />
           </div>
 
           <div className="space-y-2">
             <div className="flex justify-between text-xs">
-              <span className="text-gray-400">Duration</span>
+              <span className="text-gray-400">视频时长</span>
               <span className="text-gray-200">5s</span>
             </div>
-            <input type="range" className="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-primary" />
+            <input type="range" min="1" max="10" className="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-primary" />
           </div>
         </div>
 

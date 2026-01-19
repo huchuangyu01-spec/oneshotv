@@ -36,9 +36,6 @@ export const LiquidBackground = () => {
         }}
         className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full mix-blend-screen filter blur-[120px] opacity-20"
       />
-
-      {/* Noise Overlay (Optional - PRD said no "dirty" noise, but clean grain is sometimes okay. 
-          Skipping based on "Clean" keyword, focusing on Liquid Flow) */}
     </div>
   );
 };

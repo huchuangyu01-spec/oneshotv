@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Film, User, Layers } from "lucide-react";
+import { Film } from "lucide-react";
 
 export const Navbar = () => {
   return (
@@ -12,15 +12,15 @@ export const Navbar = () => {
       </div>
 
       <div className="flex items-center gap-6">
-        <Link href="/" className="text-sm text-gray-400 hover:text-primary transition-colors">Studio</Link>
-        <Link href="/gallery" className="text-sm text-gray-400 hover:text-white transition-colors">Gallery</Link>
-        <Link href="/pricing" className="text-sm text-gray-400 hover:text-white transition-colors">Pricing</Link>
-        <Link href="/docs" className="text-sm text-gray-400 hover:text-white transition-colors">Docs</Link>
+        <Link href="/" className="text-sm text-gray-400 hover:text-primary transition-colors">创作台</Link>
+        <Link href="/gallery" className="text-sm text-gray-400 hover:text-white transition-colors">社区画廊</Link>
+        <Link href="/pricing" className="text-sm text-gray-400 hover:text-white transition-colors">订阅价格</Link>
+        <Link href="/docs" className="text-sm text-gray-400 hover:text-white transition-colors">帮助文档</Link>
       </div>
 
       <div className="flex items-center gap-4">
         <button className="text-sm text-white glass-button px-4 py-2 rounded-full">
-          Sign In
+          登录
         </button>
       </div>
     </nav>
